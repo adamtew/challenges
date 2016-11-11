@@ -12,8 +12,7 @@ print find_n(5)
 
 
 def find_even(array):
-    new_list = [a for i, a in enumerate(array, 1) if i % 2 == 0]
-    return new_list
+    return [a for i, a in enumerate(array, 1) if i % 2 == 0]
 
 print find_even(letters_array)
 
@@ -21,7 +20,26 @@ print find_even(letters_array)
 
 
 def find_odd(array):
-    new_list = [a for i, a in enumerate(array, 1) if i % 2 == 1]
-    return new_list
+    return [a for i, a in enumerate(array, 1) if i % 2 == 1]
 
 print find_odd(letters_array)
+
+# Find middle value position
+
+value_array = [0, 8, 3, 4, 12, 6, 6, 10, 6, 5, 4, 2]
+value_array = [0, 1, 0, 0, 0, 0, 0]
+
+
+def find_middle_value(array):
+    total = sum(array)
+    middle_value = 0
+    for i, x in enumerate(array):
+        print x, i
+        middle_value += array[i]
+        if middle_value == total / 2:
+            return i
+    return None
+
+print find_middle_value(value_array)
+
+
